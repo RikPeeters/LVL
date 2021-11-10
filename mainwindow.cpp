@@ -102,22 +102,12 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     if(event->key() == Qt::Key_8)
     {
         statusBar()->showMessage(tr("Key: 8"));
-        switch (ui->stackedWidget->currentIndex()) {
-        case 0:
-            Agent = "Sova";
-            update0();
-            break;
-        }
+        Agent = "Viper";
+        update0();
     }
     if(event->key() == Qt::Key_9)
     {
         statusBar()->showMessage(tr("Key: 9"));
-        Agent = "Viper";
-        update0();
-    }
-    if(event->key() == Qt::Key_0)
-    {
-        statusBar()->showMessage(tr("Key: 0"));
         switch (ui->stackedWidget->currentIndex()) {
         case 0:
             Agent = "Killjoy";
@@ -164,6 +154,48 @@ void MainWindow::resizeEvent(QResizeEvent*){
 void MainWindow::createStatusBar()
 {
     statusBar()->showMessage(tr("Running"));
+}
+
+void MainWindow::showx(int a, int b){
+    if(a > 0){
+        ui->A1->show();
+        ui->AF1->show();
+    }if(a > 1){
+        ui->A2->show();
+        ui->AF2->show();
+    }if(a > 2){
+        ui->A3->show();
+        ui->AF3->show();
+    }if(a > 3){
+        ui->A4->show();
+        ui->AF4->show();
+    }if(a > 4){
+        ui->A5->show();
+        ui->AF5->show();
+    }
+    if(b > 0){
+        ui->B1->show();
+        ui->BF1->show();
+    }if(b > 1){
+        ui->B2->show();
+        ui->BF2->show();
+    }if(b > 2){
+        ui->B3->show();
+        ui->BF3->show();
+    }if(b > 3){
+        ui->B4->show();
+        ui->BF4->show();
+    }if(b > 4){
+        ui->B5->show();
+        ui->BF5->show();
+    }
+}
+
+void MainWindow::tmpl(){
+    Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.jpg");
+    if(Temp.isNull()){
+            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+    }
 }
 
 
@@ -247,11 +279,7 @@ void MainWindow::on_PBbrim_clicked()
     Agent = "Brimstone";
     update0();
 }
-void MainWindow::on_PBsova_clicked()
-{
-    Agent = "Sova";
-    update0();
-}
+
 void MainWindow::on_PBviper_clicked()
 {
     Agent = "Viper";
@@ -314,44 +342,34 @@ void MainWindow::update1(){
     {
         if(Map == "Bind")
         {
+            showx(2,2);
+
             //A1
             name = "Box";
             Side = "A";
-            ui->A1->show();
-            ui->AF1->show();
             ui->A1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.jpg");
+            tmpl();
             ui->AF1->setPixmap(Temp.scaled(ui->AF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //A2
             name = "Default";
             Side = "A";
-            ui->A2->show();
-            ui->AF2->show();
             ui->A2->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.jpg");
+            tmpl();
             ui->AF2->setPixmap(Temp.scaled(ui->AF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B1
             name = "Default";
             Side = "B";
-            ui->B1->show();
-            ui->BF1->show();
             ui->B1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.jpg");
+            tmpl();
             ui->BF1->setPixmap(Temp.scaled(ui->BF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B2
             name = "Def";
             Side = "B";
-            ui->B2->show();
-            ui->BF2->show();
             ui->B2->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.jpg");
+            tmpl();
             ui->BF2->setPixmap(Temp.scaled(ui->BF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
         }
@@ -361,108 +379,60 @@ void MainWindow::update1(){
         }
         if(Map == "Split")
         {
+            showx(2,1);
+
             //A1
             name = "Back";
-            Side = "A";
-            ui->A1->show();
-            ui->AF1->show();
+            Side = "A";;
             ui->A1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.jpg");
+            tmpl();
             ui->AF1->setPixmap(Temp.scaled(ui->AF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //A2
             name = "Default";
             Side = "A";
-            ui->A2->show();
-            ui->AF2->show();
             ui->A2->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.jpg");
+            tmpl();
             ui->AF2->setPixmap(Temp.scaled(ui->AF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B1
             name = "Default";
             Side = "B";
-            ui->B1->show();
-            ui->BF1->show();
             ui->B1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.jpg");
+            tmpl();
             ui->BF1->setPixmap(Temp.scaled(ui->BF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
         }
         if(Map == "Ascent")
         {
+            showx(1,3);
+
             //A1
             name = "Default";
             Side = "A";
-            ui->A1->show();
-            ui->AF1->show();
             ui->A1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.jpg");
+            tmpl();
             ui->AF1->setPixmap(Temp.scaled(ui->AF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B1
             name = "Default";
             Side = "B";
-            ui->B1->show();
-            ui->BF1->show();
             ui->B1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF1->setPixmap(Temp.scaled(ui->BF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B2
             name = "Market";
             Side = "B";
-            ui->B2->show();
-            ui->BF2->show();
             ui->B2->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.jpg");
+            tmpl();
             ui->BF2->setPixmap(Temp.scaled(ui->BF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B3
             name = "Def";
             Side = "B";
-            ui->B3->show();
-            ui->BF3->show();
             ui->B3->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.jpg");
+            tmpl();
             ui->BF3->setPixmap(Temp.scaled(ui->BF3->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
-        }
-        if(Map == "Icebox")
-        {
-
-        }
-        if(Map == "Breeze")
-        {
-
-        }
-        else
-        {
-
-        }
-    }
-    if(Agent == "Sova")
-    {
-        if(Map == "Bind")
-        {
-
-        }
-        if(Map == "Haven")
-        {
-
-        }
-        if(Map == "Split")
-        {
-
-        }
-        if(Map == "Ascent")
-        {
-
         }
         if(Map == "Icebox")
         {
@@ -481,117 +451,88 @@ void MainWindow::update1(){
     {
         if(Map == "Bind")
         {
+            showx(3,3);
+
             //A1
             name = "Box";
             Side = "A";
-            ui->A1->show();
-            ui->AF1->show();
             ui->A1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF1->setPixmap(Temp.scaled(ui->AF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //A2
             name = "Lamps1";
             Side = "A";
-            ui->A2->show();
-            ui->AF2->show();
             ui->A2->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF2->setPixmap(Temp.scaled(ui->AF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //A3
             name = "Lamps2";
             Side = "A";
-            ui->A3->show();
-            ui->AF3->show();
             ui->A3->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF3->setPixmap(Temp.scaled(ui->AF3->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B1
             name = "Left1";
             Side = "B";
-            ui->B1->show();
-            ui->BF1->show();
             ui->B1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF1->setPixmap(Temp.scaled(ui->BF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B2
             name = "Left2";
             Side = "B";
-            ui->B2->show();
-            ui->BF2->show();
             ui->B2->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF2->setPixmap(Temp.scaled(ui->BF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B3
             name = "Left3";
             Side = "B";
-            ui->B3->show();
-            ui->BF3->show();
             ui->B3->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF3->setPixmap(Temp.scaled(ui->BF3->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
         }
         if(Map == "Haven")
         {
+            showx(2,3);
+
             //A1
             name = "Default";
             Side = "A";
-            ui->A1->show();
-            ui->AF1->show();
             ui->A1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF1->setPixmap(Temp.scaled(ui->AF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //A2
             name = "Short";
             Side = "A";
-            ui->A2->show();
-            ui->AF2->show();
             ui->A2->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF2->setPixmap(Temp.scaled(ui->AF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B1
             name = "Middle";
             Side = "B";
-            ui->B1->show();
-            ui->BF1->show();
             ui->B1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF1->setPixmap(Temp.scaled(ui->BF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //C1
             name = "Default";
             Side = "B";
-            ui->B2->show();
-            ui->BF2->show();
             ui->B2->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF2->setPixmap(Temp.scaled(ui->BF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //C2
             name = "Long";
             Side = "B";
-            ui->B3->show();
-            ui->BF3->show();
             ui->B3->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF3->setPixmap(Temp.scaled(ui->BF3->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
 
@@ -600,280 +541,207 @@ void MainWindow::update1(){
         }
         if(Map == "Split")
         {
+            showx(4,2);
+
             //A1
             name = "Back1";
             Side = "A";
-            ui->A1->show();
-            ui->AF1->show();
             ui->A1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF1->setPixmap(Temp.scaled(ui->AF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //A2
             name = "Back2";
             Side = "A";
-            ui->A2->show();
-            ui->AF2->show();
             ui->A2->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF2->setPixmap(Temp.scaled(ui->AF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //A3
             name = "Back3";
             Side = "A";
-            ui->A3->show();
-            ui->AF3->show();
             ui->A3->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF3->setPixmap(Temp.scaled(ui->AF3->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //A4
             name = "Default1";
             Side = "A";
-            ui->A4->show();
-            ui->AF4->show();
             ui->A4->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF4->setPixmap(Temp.scaled(ui->AF4->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //A4
             name = "Default2";
             Side = "A";
-            ui->A5->show();
-            ui->AF5->show();
             ui->A5->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF5->setPixmap(Temp.scaled(ui->AF5->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B1
             name = "Default1";
             Side = "B";
-            ui->B1->show();
-            ui->BF1->show();
             ui->B1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF1->setPixmap(Temp.scaled(ui->BF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B2
             name = "Default2";
             Side = "B";
-            ui->B2->show();
-            ui->BF2->show();
             ui->B2->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF2->setPixmap(Temp.scaled(ui->BF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
         }
         if(Map == "Ascent")
         {
+            showx(4,4);
+
             //A1
             name = "Box1";
             Side = "A";
-            ui->A1->show();
-            ui->AF1->show();
             ui->A1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF1->setPixmap(Temp.scaled(ui->AF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //A2
             name = "Box2";
             Side = "A";
-            ui->A2->show();
-            ui->AF2->show();
             ui->A2->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF2->setPixmap(Temp.scaled(ui->AF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //A3
             name = "Default1";
             Side = "A";
-            ui->A3->show();
-            ui->AF3->show();
             ui->A3->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF3->setPixmap(Temp.scaled(ui->AF3->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //A4
             name = "Default2";
             Side = "A";
-            ui->A4->show();
-            ui->AF4->show();
             ui->A4->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF4->setPixmap(Temp.scaled(ui->AF4->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B1
             name = "Default1";
             Side = "B";
-            ui->B1->show();
-            ui->BF1->show();
             ui->B1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF1->setPixmap(Temp.scaled(ui->BF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B2
             name = "Default2";
             Side = "B";
-            ui->B2->show();
-            ui->BF2->show();
             ui->B2->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF2->setPixmap(Temp.scaled(ui->BF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B3
             name = "Default3";
             Side = "B";
-            ui->B3->show();
-            ui->BF3->show();
             ui->B3->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF3->setPixmap(Temp.scaled(ui->BF3->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B4
             name = "Default4";
             Side = "B";
-            ui->B4->show();
-            ui->BF4->show();
             ui->B4->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF4->setPixmap(Temp.scaled(ui->BF4->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
         }
         if(Map == "Icebox")
         {
+            showx(1,1);
+
             //A1
             name = "Default";
             Side = "A";
-            ui->A1->show();
-            ui->AF1->show();
             ui->A1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF1->setPixmap(Temp.scaled(ui->AF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B1
             name = "Default";
             Side = "B";
-            ui->B1->show();
-            ui->BF1->show();
             ui->B1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF1->setPixmap(Temp.scaled(ui->BF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
         }
         if(Map == "Breeze")
         {
+            showx(5,5);
+
             //A1
             name = "Between";
             Side = "A";
-            ui->A1->show();
-            ui->AF1->show();
             ui->A1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF1->setPixmap(Temp.scaled(ui->AF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //A2
             name = "Corner";
             Side = "A";
-            ui->A2->show();
-            ui->AF2->show();
             ui->A2->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF2->setPixmap(Temp.scaled(ui->AF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //A3
             name = "Edge";
             Side = "A";
-            ui->A3->show();
-            ui->AF3->show();
             ui->A3->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF3->setPixmap(Temp.scaled(ui->AF3->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //A4
             name = "CornerMid";
             Side = "A";
-            ui->A4->show();
-            ui->AF4->show();
             ui->A4->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF4->setPixmap(Temp.scaled(ui->AF4->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //A5
             name = "EdgeMid";
             Side = "A";
-            ui->A5->show();
-            ui->AF5->show();
             ui->A5->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->AF5->setPixmap(Temp.scaled(ui->AF5->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B1
             name = "Default";
             Side = "B";
-            ui->B1->show();
-            ui->BF1->show();
             ui->B1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF1->setPixmap(Temp.scaled(ui->BF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B2
             name = "Tower";
             Side = "B";
-            ui->B2->show();
-            ui->BF2->show();
             ui->B2->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF2->setPixmap(Temp.scaled(ui->BF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B3
             name = "DefaultMid";
             Side = "B";
-            ui->B3->show();
-            ui->BF3->show();
             ui->B3->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF3->setPixmap(Temp.scaled(ui->BF3->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B4
             name = "TowerMid";
             Side = "B";
-            ui->B4->show();
-            ui->BF4->show();
             ui->B4->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF4->setPixmap(Temp.scaled(ui->BF4->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //B5
             name = "DefaultBox";
             Side = "B";
-            ui->B5->show();
-            ui->BF5->show();
             ui->B5->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+            tmpl();
             ui->BF5->setPixmap(Temp.scaled(ui->BF5->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
         }
         else
@@ -893,24 +761,20 @@ void MainWindow::update1(){
         }
         if(Map == "Split")
         {
+            showx(2,0);
+
             //A1
             name = "Default";
             Side = "A";
-            ui->A1->show();
-            ui->AF1->show();
             ui->A1->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.jpg");
+            tmpl();
             ui->AF1->setPixmap(Temp.scaled(ui->AF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //A2
             name = "Ramp";
             Side = "A";
-            ui->A2->show();
-            ui->AF2->show();
             ui->A2->setText(name);
-
-            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.jpg");
+            tmpl();
             ui->AF2->setPixmap(Temp.scaled(ui->AF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
         }
         if(Map == "Ascent")
@@ -1076,9 +940,8 @@ void MainWindow::on_actionToggle_keys_triggered()
         ui->PBicebox->setText("Icebox 5)");
         ui->PBbreeze->setText("Breeze (6)");
         ui->PBbrim->setText("Brimstone (7)");
-        ui->PBsova->setText("Sova (8)");
-        ui->PBviper->setText("Viper (9)");
-        ui->PBkill->setText("Killjoy (0)");
+        ui->PBviper->setText("Viper (8)");
+        ui->PBkill->setText("Killjoy (9)");
         ui->Continue->setText("Show lineups (Enter)");
 
         //index1
@@ -1094,7 +957,6 @@ void MainWindow::on_actionToggle_keys_triggered()
         ui->PBicebox->setText("Icebox");
         ui->PBbreeze->setText("Breeze");
         ui->PBbrim->setText("Brimstone");
-        ui->PBsova->setText("Sova");
         ui->PBviper->setText("Viper");
         ui->PBkill->setText("Killjoy");
         ui->Continue->setText("Show lineups");
