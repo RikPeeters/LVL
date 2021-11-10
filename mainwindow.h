@@ -45,7 +45,6 @@ private slots:
     void on_PBicebox_clicked();
     void on_PBbreeze_clicked();
     void on_PBbrim_clicked();
-    void on_PBsova_clicked();
     void on_PBviper_clicked();
     void on_PBkill_clicked();
 
@@ -77,6 +76,9 @@ private slots:
     void on_Back2_clicked();
 
     void on_actionAbout_Qt_triggered();
+
+    void showx(int, int);
+    void tmpl();
 
 private:
     Ui::MainWindow *ui;
