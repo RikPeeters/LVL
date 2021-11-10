@@ -78,6 +78,7 @@ private slots:
     void on_actionAbout_Qt_triggered();
 
     void showx(int, int);
+    void hidex();
     void tmpl();
 
 private:

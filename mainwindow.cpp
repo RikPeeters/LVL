@@ -192,10 +192,39 @@ void MainWindow::showx(int a, int b){
 }
 
 void MainWindow::tmpl(){
-    Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.jpg");
+    Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.png");
+    if(Temp.isNull()){
+            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.JPG");
+    }
     if(Temp.isNull()){
             Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
     }
+    if(Temp.isNull()){
+            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.jpg");
+    }
+}
+
+void MainWindow::hidex(){
+    ui->A1->hide();
+    ui->A2->hide();
+    ui->A3->hide();
+    ui->A4->hide();
+    ui->A5->hide();
+    ui->AF1->hide();
+    ui->AF2->hide();
+    ui->AF3->hide();
+    ui->AF4->hide();
+    ui->AF5->hide();
+    ui->B1->hide();
+    ui->B2->hide();
+    ui->B3->hide();
+    ui->B4->hide();
+    ui->B5->hide();
+    ui->BF1->hide();
+    ui->BF2->hide();
+    ui->BF3->hide();
+    ui->BF4->hide();
+    ui->BF5->hide();
 }
 
 
@@ -314,28 +343,7 @@ void MainWindow::update1(){
 
 
     //hide every box
-    if(true){
-        ui->A1->hide();
-        ui->A2->hide();
-        ui->A3->hide();
-        ui->A4->hide();
-        ui->A5->hide();
-        ui->AF1->hide();
-        ui->AF2->hide();
-        ui->AF3->hide();
-        ui->AF4->hide();
-        ui->AF5->hide();
-        ui->B1->hide();
-        ui->B2->hide();
-        ui->B3->hide();
-        ui->B4->hide();
-        ui->B5->hide();
-        ui->BF1->hide();
-        ui->BF2->hide();
-        ui->BF3->hide();
-        ui->BF4->hide();
-        ui->BF5->hide();
-    }
+    hidex();
 
     //Agent ---- maps
     if(Agent == "Brimstone")
@@ -375,6 +383,35 @@ void MainWindow::update1(){
         }
         if(Map == "Haven")
         {
+            showx(2,2);
+
+        //A1
+        name = "Default";
+        Side = "A";
+        ui->A1->setText(name);
+        tmpl();
+        ui->AF1->setPixmap(Temp.scaled(ui->AF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+        //A2
+        name = "Short";
+        Side = "A";
+        ui->A2->setText(name);
+        tmpl();
+        ui->AF2->setPixmap(Temp.scaled(ui->AF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+        //B1
+        name = "Middle";
+        Side = "B";
+        ui->B1->setText(name);
+        tmpl();
+        ui->BF1->setPixmap(Temp.scaled(ui->BF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+        //C1
+        name = "Box";
+        Side = "B";
+        ui->B2->setText(name);
+        tmpl();
+        ui->BF2->setPixmap(Temp.scaled(ui->BF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
         }
         if(Map == "Split")
@@ -436,11 +473,39 @@ void MainWindow::update1(){
         }
         if(Map == "Icebox")
         {
+            showx(1,1);
 
+            //A1
+            name = "Default";
+            Side = "A";
+            ui->A1->setText(name);
+            tmpl();
+            ui->AF1->setPixmap(Temp.scaled(ui->AF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+            //B1
+            name = "Default";
+            Side = "B";
+            ui->B1->setText(name);
+            tmpl();
+            ui->BF1->setPixmap(Temp.scaled(ui->BF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
         }
         if(Map == "Breeze")
         {
+            showx(1,1);
 
+            //A1
+            name = "Edge";
+            Side = "A";
+            ui->A1->setText(name);
+            tmpl();
+            ui->AF1->setPixmap(Temp.scaled(ui->AF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+            //B1
+            name = "Corner";
+            Side = "B";
+            ui->B1->setText(name);
+            tmpl();
+            ui->BF1->setPixmap(Temp.scaled(ui->BF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
         }
         else
         {
@@ -522,7 +587,7 @@ void MainWindow::update1(){
             ui->BF1->setPixmap(Temp.scaled(ui->BF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
             //C1
-            name = "Default";
+            name = "Box";
             Side = "B";
             ui->B2->setText(name);
             tmpl();
@@ -534,10 +599,6 @@ void MainWindow::update1(){
             ui->B3->setText(name);
             tmpl();
             ui->BF3->setPixmap(Temp.scaled(ui->BF3->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
-
-
-
-
         }
         if(Map == "Split")
         {
@@ -753,7 +814,28 @@ void MainWindow::update1(){
     {
         if(Map == "Bind")
         {
+            showx(2,1);
 
+            //A1
+            name = "Default";
+            Side = "A";
+            ui->A1->setText(name);
+            tmpl();
+            ui->AF1->setPixmap(Temp.scaled(ui->AF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+            //A2
+            name = "Box";
+            Side = "A";
+            ui->A2->setText(name);
+            tmpl();
+            ui->AF2->setPixmap(Temp.scaled(ui->AF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+            //B1
+            name = "Default";
+            Side = "B";
+            ui->B1->setText(name);
+            tmpl();
+            ui->BF1->setPixmap(Temp.scaled(ui->BF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
         }
         if(Map == "Haven")
         {
@@ -896,19 +978,37 @@ void MainWindow::on_B5_clicked()
 
 void MainWindow::update2()
 {
-    Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Bom.PNG");
+    Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Bom.png");
     if(Temp.isNull()){
-        Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Bom.jpg");
+            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Bom.JPG");
+    }
+    if(Temp.isNull()){
+            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Bom.PNG");
+    }
+    if(Temp.isNull()){
+            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Bom.jpg");
     }
     ui->Bom->setPixmap(Temp.scaled(ui->Bom->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
-    Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+    Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.png");
     if(Temp.isNull()){
-        Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.jpg");
+            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.JPG");
+    }
+    if(Temp.isNull()){
+            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.PNG");
+    }
+    if(Temp.isNull()){
+            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Pos.jpg");
     }
     ui->Pos->setPixmap(Temp.scaled(ui->Pos->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
-    Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Shot.PNG");
+    Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Shot.png");
     if(Temp.isNull()){
-        Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Shot.jpg");
+            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Shot.JPG");
+    }
+    if(Temp.isNull()){
+            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Shot.PNG");
+    }
+    if(Temp.isNull()){
+            Temp.load(":/Data/Foto/" + Agent + "/" + Map + "/" + Side + name + "Shot.jpg");
     }
     ui->Shot->setPixmap(Temp.scaled(ui->Shot->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 }

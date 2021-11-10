@@ -128,9 +128,6 @@
         <file>Foto/Viper/Haven/AShortBom.PNG</file>
         <file>Foto/Viper/Haven/AShortPos.PNG</file>
         <file>Foto/Viper/Haven/AShortShot.PNG</file>
-        <file>Foto/Viper/Haven/BDefaultBom.PNG</file>
-        <file>Foto/Viper/Haven/BDefaultPos.PNG</file>
-        <file>Foto/Viper/Haven/BDefaultShot.PNG</file>
         <file>Foto/Viper/Haven/BLongBom.PNG</file>
         <file>Foto/Viper/Haven/BLongPos.PNG</file>
         <file>Foto/Viper/Haven/BLongShot.PNG</file>
@@ -164,5 +161,41 @@
         <file>Foto/Viper/Split/BDefault2Bom.PNG</file>
         <file>Foto/Viper/Split/BDefault2Pos.PNG</file>
         <file>Foto/Viper/Split/BDefault2Shot.PNG</file>
+        <file>Foto/Brimstone/Haven/ADefaultBom.png</file>
+        <file>Foto/Brimstone/Haven/ADefaultPos.png</file>
+        <file>Foto/Brimstone/Haven/ADefaultShot.png</file>
+        <file>Foto/Brimstone/Haven/AshortBom.png</file>
+        <file>Foto/Brimstone/Haven/AShortPos.png</file>
+        <file>Foto/Brimstone/Haven/AShortShot.png</file>
+        <file>Foto/Brimstone/Haven/BBoxBom.png</file>
+        <file>Foto/Brimstone/Haven/BBoxPos.png</file>
+        <file>Foto/Brimstone/Haven/BBoxShot.png</file>
+        <file>Foto/Brimstone/Haven/BMiddleBom.png</file>
+        <file>Foto/Brimstone/Haven/BMiddlePos.png</file>
+        <file>Foto/Brimstone/Haven/BMiddleShot.png</file>
+        <file>Foto/Viper/Haven/BBoxBom.PNG</file>
+        <file>Foto/Viper/Haven/BBoxPos.PNG</file>
+        <file>Foto/Viper/Haven/BBoxShot.PNG</file>
+        <file>Foto/Brimstone/Breeze/AEdgeBom.png</file>
+        <file>Foto/Brimstone/Breeze/AEdgePos.png</file>
+        <file>Foto/Brimstone/Breeze/AEdgeShot.png</file>
+        <file>Foto/Brimstone/Breeze/BCornerBom.png</file>
+        <file>Foto/Brimstone/Breeze/BCornerPos.png</file>
+        <file>Foto/Brimstone/Breeze/BCornerShot.png</file>
+        <file>Foto/Brimstone/Icebox/ADefaultBom.png</file>
+        <file>Foto/Brimstone/Icebox/ADefaultPos.png</file>
+        <file>Foto/Brimstone/Icebox/ADefaultShot.png</file>
+        <file>Foto/Brimstone/Icebox/BDefaultBom.png</file>
+        <file>Foto/Brimstone/Icebox/BDefaultPos.png</file>
+        <file>Foto/Brimstone/Icebox/BDefaultShot.png</file>
+        <file>Foto/Killjoy/Bind/ABoxBom.png</file>
+        <file>Foto/Killjoy/Bind/ABoxPos.png</file>
+        <file>Foto/Killjoy/Bind/ABoxShot.png</file>
+        <file>Foto/Killjoy/Bind/ADefaultBom.png</file>
+        <file>Foto/Killjoy/Bind/ADefaultPos.png</file>
+        <file>Foto/Killjoy/Bind/ADefaultShot.png</file>
+        <file>Foto/Killjoy/Bind/BDefaultBom.png</file>
+        <file>Foto/Killjoy/Bind/BDefaultPos.png</file>
+        <file>Foto/Killjoy/Bind/BDefaultShot.png</file>
     </qresource>
 </RCC>
