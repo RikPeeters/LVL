@@ -874,6 +874,7 @@
      <string>Help</string>
     </property>
     <addaction name="actionAbout_Qt"/>
+    <addaction name="actionAbout_Me"/>
    </widget>
    <addaction name="menuExit"/>
    <addaction name="menuHelp"/>
@@ -892,6 +893,11 @@
   <action name="actionToggle_keys">
    <property name="text">
     <string>Toggle keys</string>
+   </property>
+  </action>
+  <action name="actionAbout_Me">
+   <property name="text">
+    <string>About Me</string>
    </property>
   </action>
  </widget>

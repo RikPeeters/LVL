@@ -1119,3 +1119,9 @@ void MainWindow::on_actionAbout_Qt_triggered()
     QApplication::aboutQt();
 }
 
+
+void MainWindow::on_actionAbout_Me_triggered()
+{
+    am->show();
+}
+

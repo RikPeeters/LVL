@@ -6,6 +6,7 @@
 #include <QKeyEvent>
 #include <QStatusBar>
 #include <QDebug>
+#include "aboutme.h"
 
 #define QD qDebug() << __FILE__ << __LINE__
 
@@ -81,8 +82,13 @@ private slots:
     void hidex();
     void tmpl();
 
+    void on_actionAbout_Me_triggered();
+
 private:
     Ui::MainWindow *ui;
+
+    aboutme *am = new aboutme();
+
     void keyPressEvent(QKeyEvent *);
     void keyReleaseEvent(QKeyEvent *);
     void resizeEvent(QResizeEvent*);
