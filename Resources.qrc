@@ -215,5 +215,6 @@
         <file>Foto/Killjoy/Ascent/BDefaultBom.png</file>
         <file>Foto/Killjoy/Ascent/BDefaultPos.png</file>
         <file>Foto/Killjoy/Ascent/BDefaultShot.png</file>
+        <file>Foto/TLBE.png</file>
     </qresource>
 </RCC>
