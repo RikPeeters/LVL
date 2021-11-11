@@ -197,5 +197,23 @@
         <file>Foto/Killjoy/Bind/BDefaultBom.png</file>
         <file>Foto/Killjoy/Bind/BDefaultPos.png</file>
         <file>Foto/Killjoy/Bind/BDefaultShot.png</file>
+        <file>Foto/Killjoy/Haven/ALongBom.png</file>
+        <file>Foto/Killjoy/Haven/ALongPos.png</file>
+        <file>Foto/Killjoy/Haven/ALongShot.png</file>
+        <file>Foto/Killjoy/Haven/AShortBom.png</file>
+        <file>Foto/Killjoy/Haven/AShortPos.png</file>
+        <file>Foto/Killjoy/Haven/AShortShot.png</file>
+        <file>Foto/Killjoy/Ascent/ABoxBom.png</file>
+        <file>Foto/Killjoy/Ascent/ABoxPos.png</file>
+        <file>Foto/Killjoy/Ascent/ABoxShot.png</file>
+        <file>Foto/Killjoy/Ascent/ADefault2Bom.png</file>
+        <file>Foto/Killjoy/Ascent/ADefault2Pos.png</file>
+        <file>Foto/Killjoy/Ascent/ADefault2Shot.png</file>
+        <file>Foto/Killjoy/Ascent/ADefaultBom.png</file>
+        <file>Foto/Killjoy/Ascent/ADefaultPos.png</file>
+        <file>Foto/Killjoy/Ascent/ADefaultShot.png</file>
+        <file>Foto/Killjoy/Ascent/BDefaultBom.png</file>
+        <file>Foto/Killjoy/Ascent/BDefaultPos.png</file>
+        <file>Foto/Killjoy/Ascent/BDefaultShot.png</file>
     </qresource>
 </RCC>
