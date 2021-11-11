@@ -839,7 +839,21 @@ void MainWindow::update1(){
         }
         if(Map == "Haven")
         {
+            showx(2, 0);
 
+            //A1
+            name = "Short";
+            Side = "A";
+            ui->A1->setText(name);
+            tmpl();
+            ui->AF1->setPixmap(Temp.scaled(ui->AF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+            //A2
+            name = "Long";
+            Side = "A";
+            ui->A2->setText(name);
+            tmpl();
+            ui->AF2->setPixmap(Temp.scaled(ui->AF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
         }
         if(Map == "Split")
         {
@@ -861,15 +875,43 @@ void MainWindow::update1(){
         }
         if(Map == "Ascent")
         {
+            showx(3,1);
 
+            //A1
+            name = "Default";
+            Side = "A";
+            ui->A1->setText(name);
+            tmpl();
+            ui->AF1->setPixmap(Temp.scaled(ui->AF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+            //A2
+            name = "Default2";
+            Side = "A";
+            ui->A2->setText(name);
+            tmpl();
+            ui->AF2->setPixmap(Temp.scaled(ui->AF2->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+            //A3
+            name = "Box";
+            Side = "A";
+            ui->A3->setText(name);
+            tmpl();
+            ui->AF3->setPixmap(Temp.scaled(ui->AF3->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+            //B1
+            name = "Default";
+            Side = "B";
+            ui->B1->setText(name);
+            tmpl();
+            ui->BF1->setPixmap(Temp.scaled(ui->BF1->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
         }
         if(Map == "Icebox")
         {
-
+            //no viable lineups
         }
         if(Map == "Breeze")
         {
-
+            //no viable lineups
         }
         else
         {
